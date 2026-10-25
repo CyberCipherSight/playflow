@@ -34,7 +34,7 @@ jobs:
           /tmp/playflow-wheel/bin/python -m pip install dist/*.whl
           cd /tmp
           /tmp/playflow-wheel/bin/playflow --help
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: distributions
           path: dist/*
