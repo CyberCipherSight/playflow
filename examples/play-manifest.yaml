@@ -1,0 +1,49 @@
+schema_version: 1
+app_name: Example App
+# Relative to this manifest, e.g. ../my-android-project
+project_dir: ../my-android-project
+
+build:
+  gradle_task: bundleRelease
+  module: app
+  aab_path: app/build/outputs/bundle/release/app-release.aab
+  apk_path: app/build/outputs/apk/release/app-release.apk
+
+play:
+  package_name: com.example.app
+  default_track: internal
+  release_status: draft
+  # For inProgress/halted only: user_fraction: 0.1
+  service_account_env: PLAYFLOW_GOOGLE_CREDENTIALS
+  browser_profile: ~/.local/share/playflow/chromium-profile
+
+developer_facts:
+  contains_ads: false
+  uses_advertising_id: false
+  login_required: false
+  target_audience: general
+  support_email: support@example.com
+  privacy_policy_url: https://example.com/privacy
+  account_deletion_url: null
+  data_safety_reviewed: true
+
+# Reserved metadata; listing and assets are not uploaded by the current API adapter.
+listing:
+  - language: en-US
+    title: Example App
+    short_description: Example short description
+    full_description: Example full description
+
+assets:
+  icon: store/icon.png
+  feature_graphic: store/feature.png
+  phone_screenshots:
+    - store/screenshots/01.png
+
+release_notes:
+  - language: en-US
+    text: Initial release
+
+approvals:
+  require_final_submit_approval: true
+  allow_browser_write_actions: false

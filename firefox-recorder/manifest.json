@@ -1,0 +1,38 @@
+{
+  "manifest_version": 2,
+  "name": "PlayFlow Console Recorder",
+  "version": "0.1.0",
+  "description": "Records sanitized semantic interactions on Google Play Console for PlayFlow.",
+  "permissions": [
+    "downloads",
+    "tabs",
+    "https://play.google.com/console/*"
+  ],
+  "background": {
+    "scripts": [
+      "privacy.js",
+      "background.js"
+    ]
+  },
+  "browser_action": {
+    "default_title": "PlayFlow Recorder",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://play.google.com/console/*"
+      ],
+      "js": [
+        "privacy.js",
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "playflow-recorder@local"
+    }
+  }
+}

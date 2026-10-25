@@ -1,0 +1,9 @@
+{
+  "manifest_version": 2,
+  "name": "PlayFlow Firefox Bridge",
+  "version": "0.1.0",
+  "description": "Connect selected Play Console and Google Sites tabs to your local PlayFlow process.",
+  "permissions": ["tabs", "https://play.google.com/console/*", "https://sites.google.com/*", "http://127.0.0.1/*"],
+  "background": {"scripts": ["config.js", "background.js"], "persistent": true},
+  "browser_specific_settings": {"gecko": {"id": "playflow-bridge@local"}}
+}

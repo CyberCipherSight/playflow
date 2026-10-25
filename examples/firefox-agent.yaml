@@ -1,0 +1,34 @@
+schema_version: 1
+app_name: Example App
+project_dir: ../my-android-project
+state_dir: .playflow/example-app
+
+build:
+  module: app
+  gradle_task: bundleRelease
+  aab_path: app/build/outputs/bundle/release/app-release.aab
+
+play:
+  package_name: com.example.app
+  default_track: internal
+  release_status: draft
+
+browser:
+  engine: firefox
+  firefox_profile_name: default-release
+  # Replace with the actual URL copied from the selected app in Play Console.
+  console_url: https://play.google.com/console/u/0/developers/1234567890123456789/app/1234567890123456789/
+
+# Null means unresolved. Do not infer policy answers from this example.
+developer_facts:
+  contains_ads: null
+  uses_advertising_id: null
+  login_required: null
+  target_audience: null
+  privacy_policy_url: null
+  support_email: null
+  data_safety_reviewed: false
+
+approvals:
+  require_final_submit_approval: true
+  allow_browser_write_actions: false

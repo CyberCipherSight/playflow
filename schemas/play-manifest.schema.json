@@ -1,0 +1,540 @@
+{
+  "$defs": {
+    "ApprovalConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "require_final_submit_approval": {
+          "default": true,
+          "title": "Require Final Submit Approval",
+          "type": "boolean"
+        },
+        "allow_browser_write_actions": {
+          "default": false,
+          "title": "Allow Browser Write Actions",
+          "type": "boolean"
+        }
+      },
+      "title": "ApprovalConfig",
+      "type": "object"
+    },
+    "AssetConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "icon": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Icon"
+        },
+        "feature_graphic": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Feature Graphic"
+        },
+        "phone_screenshots": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Phone Screenshots",
+          "type": "array"
+        },
+        "ai_generated": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ai Generated"
+        }
+      },
+      "title": "AssetConfig",
+      "type": "object"
+    },
+    "BrowserConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "engine": {
+          "default": "chromium",
+          "enum": [
+            "chromium",
+            "firefox"
+          ],
+          "title": "Engine",
+          "type": "string"
+        },
+        "firefox_profile_name": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Firefox Profile Name"
+        },
+        "firefox_profile_path": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Firefox Profile Path"
+        },
+        "console_url": {
+          "default": "https://play.google.com/console/",
+          "title": "Console Url",
+          "type": "string"
+        }
+      },
+      "title": "BrowserConfig",
+      "type": "object"
+    },
+    "BuildConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "gradle_task": {
+          "default": "bundleRelease",
+          "pattern": "^:?[\\w.-]+(?::[\\w.-]+)*$",
+          "title": "Gradle Task",
+          "type": "string"
+        },
+        "module": {
+          "default": "app",
+          "title": "Module",
+          "type": "string"
+        },
+        "aab_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Aab Path"
+        },
+        "apk_path": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Apk Path"
+        }
+      },
+      "title": "BuildConfig",
+      "type": "object"
+    },
+    "DeveloperFacts": {
+      "additionalProperties": false,
+      "properties": {
+        "contains_ads": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Contains Ads"
+        },
+        "uses_advertising_id": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Uses Advertising Id"
+        },
+        "login_required": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Login Required"
+        },
+        "target_audience": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Audience"
+        },
+        "privacy_policy_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Privacy Policy Url"
+        },
+        "account_deletion_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Account Deletion Url"
+        },
+        "data_safety_reviewed": {
+          "default": false,
+          "title": "Data Safety Reviewed",
+          "type": "boolean"
+        },
+        "support_email": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Support Email"
+        }
+      },
+      "title": "DeveloperFacts",
+      "type": "object"
+    },
+    "Listing": {
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "default": "en-US",
+          "title": "Language",
+          "type": "string"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "maxLength": 30,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "short_description": {
+          "anyOf": [
+            {
+              "maxLength": 80,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Short Description"
+        },
+        "full_description": {
+          "anyOf": [
+            {
+              "maxLength": 4000,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Full Description"
+        }
+      },
+      "title": "Listing",
+      "type": "object"
+    },
+    "PlayConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "package_name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Package Name"
+        },
+        "default_track": {
+          "anyOf": [
+            {
+              "minLength": 1,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": "internal",
+          "title": "Default Track"
+        },
+        "release_status": {
+          "default": "draft",
+          "enum": [
+            "draft",
+            "completed",
+            "inProgress",
+            "halted"
+          ],
+          "title": "Release Status",
+          "type": "string"
+        },
+        "service_account_env": {
+          "default": "PLAYFLOW_GOOGLE_CREDENTIALS",
+          "title": "Service Account Env",
+          "type": "string"
+        },
+        "browser_profile": {
+          "default": "~/.local/share/playflow/chromium-profile",
+          "title": "Browser Profile",
+          "type": "string"
+        },
+        "user_fraction": {
+          "anyOf": [
+            {
+              "exclusiveMaximum": 1,
+              "exclusiveMinimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "User Fraction"
+        }
+      },
+      "title": "PlayConfig",
+      "type": "object"
+    },
+    "ReleaseNotes": {
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "default": "en-US",
+          "title": "Language",
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 500,
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text"
+      ],
+      "title": "ReleaseNotes",
+      "type": "object"
+    },
+    "TestingConfig": {
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "enum": [
+            "internal",
+            "closed",
+            "open"
+          ],
+          "title": "Mode",
+          "type": "string"
+        },
+        "google_groups": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Google Groups",
+          "type": "array"
+        },
+        "country_scope": {
+          "anyOf": [
+            {
+              "enum": [
+                "all",
+                "selected"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Country Scope"
+        },
+        "countries": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Countries",
+          "type": "array"
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "title": "TestingConfig",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "app_name": {
+      "minLength": 1,
+      "title": "App Name",
+      "type": "string"
+    },
+    "project_dir": {
+      "default": ".",
+      "title": "Project Dir",
+      "type": "string"
+    },
+    "state_dir": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "State Dir"
+    },
+    "repository_url": {
+      "anyOf": [
+        {
+          "pattern": "^https://[^\\s]+$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Repository Url"
+    },
+    "build": {
+      "$ref": "#/$defs/BuildConfig"
+    },
+    "play": {
+      "$ref": "#/$defs/PlayConfig"
+    },
+    "developer_facts": {
+      "$ref": "#/$defs/DeveloperFacts"
+    },
+    "listing": {
+      "items": {
+        "$ref": "#/$defs/Listing"
+      },
+      "title": "Listing",
+      "type": "array"
+    },
+    "assets": {
+      "$ref": "#/$defs/AssetConfig"
+    },
+    "release_notes": {
+      "items": {
+        "$ref": "#/$defs/ReleaseNotes"
+      },
+      "title": "Release Notes",
+      "type": "array"
+    },
+    "approvals": {
+      "$ref": "#/$defs/ApprovalConfig"
+    },
+    "browser": {
+      "$ref": "#/$defs/BrowserConfig"
+    },
+    "testing": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/TestingConfig"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "app_name"
+  ],
+  "title": "Manifest",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

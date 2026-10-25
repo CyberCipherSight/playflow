@@ -1,0 +1,4 @@
+interface:
+  display_name: "PlayFlow Publishing"
+  short_description: "Prepare and verify Android Play Console updates"
+  default_prompt: "Use $playflow-publish to prepare this Android app update for its intended Google Play track and verify the result."

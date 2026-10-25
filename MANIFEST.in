@@ -1,0 +1,19 @@
+include LICENSE README.md SECURITY.md CONTRIBUTING.md CODE_OF_CONDUCT.md CHANGELOG.md Makefile
+include .gitignore
+recursive-include .github *.yml *.md
+recursive-include src *.py
+recursive-include src/playflow/browser_extension *.js *.json
+recursive-include docs *.md
+recursive-include examples *.yaml
+recursive-include schemas *.json
+recursive-include firefox-recorder *.js *.json *.html
+recursive-include tests *.py *.cjs
+recursive-include scripts *.sh
+recursive-include tools *.py
+recursive-include skills *.md *.yaml *.py
+include skills/playflow-publish/LICENSE
+prune .venv
+prune .playflow
+prune build
+prune dist
+global-exclude __pycache__ *.py[cod] .env *.pem *.key *.jks *.keystore *.p12 *.pfx upload-password*.txt playflow-session-*.json

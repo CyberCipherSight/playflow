@@ -1,0 +1,44 @@
+# Python and development tools
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# Local configuration, credentials and Android signing material
+.env
+.env.*
+!.env.example
+play-manifest.yaml
+!examples/play-manifest.yaml
+service-account*.json
+*service-account*.json
+credentials*.json
+*.pem
+*.key
+*.jks
+*.keystore
+*.p12
+*.pfx
+upload-password*.txt
+local.properties
+
+# Private workflow/browser/recorder data
+.playflow/
+playwright-report/
+test-results/
+playflow-session-*.json
+*.jsonl
+*.trace.zip
+
+# Editors and OS files
+.idea/
+.vscode/
+.DS_Store
+*~

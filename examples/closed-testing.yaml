@@ -1,0 +1,47 @@
+# Copy this file to a private local manifest and supply real project facts.
+schema_version: 1
+app_name: Example App
+project_dir: ../my-android-project
+# Optional: keep workflow state beside this manifest rather than in the source tree.
+state_dir: .playflow/example-app
+repository_url: https://github.com/example/example-app
+build:
+  module: app
+  gradle_task: bundleRelease
+play:
+  package_name: com.example.app
+  # Resolve the actual closed track identifier; do not assume an internal/production track.
+  default_track: null
+  release_status: draft
+browser:
+  engine: firefox
+  firefox_profile_name: normal
+testing:
+  mode: closed
+  google_groups:
+    - first-testers@googlegroups.com
+    - second-testers@googlegroups.com
+  # Means all available Console countries/regions, not a hard-coded country list.
+  country_scope: all
+  countries: []
+developer_facts:
+  contains_ads: null
+  uses_advertising_id: null
+  login_required: null
+  target_audience: null
+  support_email: null
+  privacy_policy_url: null
+  data_safety_reviewed: false
+listing:
+  - language: en-US
+    title: Example App
+    short_description: null
+    full_description: null
+assets:
+  icon: null
+  feature_graphic: null
+  phone_screenshots: []
+  ai_generated: null
+approvals:
+  require_final_submit_approval: true
+  allow_browser_write_actions: false

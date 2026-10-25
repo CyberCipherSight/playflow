@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "playflow"
+version = "0.1.0a1"
+description = "Google Play Console publishing automation CLI and Agent Skill for Android developers"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{name = "PlayFlow contributors"}]
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["android", "google-play", "play-console", "agent-skills", "publishing", "automation", "aab", "firefox"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Software Development :: Build Tools",
+]
+dependencies = [
+  "typer>=0.12,<1",
+  "rich>=13.7,<15",
+  "PyYAML>=6.0,<7",
+  "pydantic>=2.7,<3",
+  "Pillow>=10.4,<13",
+]
+
+[project.optional-dependencies]
+browser = ["playwright>=1.47,<2"]
+publish = [
+  "google-api-python-client>=2.140,<3",
+  "google-auth>=2.34,<3",
+  "google-auth-httplib2>=0.2,<1",
+]
+dev = ["pytest>=8,<10", "ruff>=0.6,<1", "build>=1.2,<2", "twine>=5,<7"]
+
+[project.scripts]
+playflow = "playflow.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/CyberCipherSight/playflow"
+Repository = "https://github.com/CyberCipherSight/playflow"
+Issues = "https://github.com/CyberCipherSight/playflow/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["playflow*"]
+
+[tool.setuptools.package-data]
+playflow = ["browser_extension/*.js", "browser_extension/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
