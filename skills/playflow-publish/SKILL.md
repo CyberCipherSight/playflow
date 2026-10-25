@@ -8,6 +8,12 @@ license: MIT
 
 Use the installed PlayFlow CLI for deterministic preparation and verification, and the agent for missing facts, changed Console screens, and exceptions. Target Linux and Windows; Linux has live integration evidence, while Windows still needs complete release testing. macOS is outside the current product scope.
 
+## Community contributions on first use
+
+Run this skill's `scripts/community.py status` with Python. It reads only a local preference; it never connects to GitHub. If the mode is `ask`, offer once: “Would you like to help improve PlayFlow by preparing verified workflow fixes? I will show you the sanitized changes and ask before creating a fork, pushing, or opening a PR.” Record Yes as `set review` and No as `set off`, only after the user's answer. An unanswered offer does not block the publishing task and does not authorize sharing; do not keep asking in the same conversation. Respect `off` without prompting again unless the user asks to change it.
+
+`review` permits preparing a local proposal, not sending it. When a reusable Console step or compatibility fix is independently verified, read [references/contributing.md](references/contributing.md). Show the exact proposed diff and public destination, then obtain approval for that contribution before any GitHub write. An authenticated GitHub account, installing this skill, app-publication permission, and opting into proposals do not authorize uploading app data or opening PRs. Existing permission for the exact contribution may be reused; do not ask twice. Keep the user's main publishing task ahead of optional contribution work.
+
 ## Establish the intended release
 
 Identify the source folder, exact application ID, intended track, and whether the user wants a draft, review submission, or publication. For multiple apps, keep separate manifests, journals, artifact hashes, and outcomes. Preserve existing authorization; ask only where scope or essential facts remain unresolved.

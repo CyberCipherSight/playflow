@@ -1,6 +1,7 @@
 """Check source and wheel contents before publishing a release."""
 
 import tarfile
+import tomllib
 import zipfile
 from pathlib import Path, PurePosixPath
 
@@ -20,8 +21,9 @@ def check(names: list[str]) -> None:
 
 def main() -> None:
     root = Path(__file__).resolve().parents[1]
-    sources = list((root / "dist").glob("*.tar.gz"))
-    wheels = list((root / "dist").glob("*.whl"))
+    version = tomllib.loads((root / "pyproject.toml").read_text())["project"]["version"]
+    sources = list((root / "dist").glob(f"playflow-{version}.tar.gz"))
+    wheels = list((root / "dist").glob(f"playflow-{version}-*.whl"))
     if not sources or not wheels:
         raise ValueError("Build both a source distribution and wheel first")
     for source in sources:
@@ -40,6 +42,8 @@ def main() -> None:
             "skills/playflow-publish/SKILL.md",
             "skills/playflow-publish/references/releases.md",
             "skills/playflow-publish/scripts/doctor.py",
+            "skills/playflow-publish/scripts/community.py",
+            "skills/playflow-publish/references/contributing.md",
             "skills/playflow-publish/references/setup.md",
             "skills/playflow-publish/LICENSE",
             "docs/getting-started.md",

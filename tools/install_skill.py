@@ -11,9 +11,11 @@ SKILL_FILES = (
     "LICENSE",
     "agents/openai.yaml",
     "scripts/doctor.py",
+    "scripts/community.py",
     "references/setup.md",
     "references/releases.md",
     "references/platforms.md",
+    "references/contributing.md",
 )
 
 

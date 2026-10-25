@@ -27,6 +27,8 @@ npx skills add CyberCipherSight/playflow --skill playflow-publish
 
 Then [install the engine and connect Firefox](docs/getting-started.md). Start with a supervised draft on your own app. A typical request is: “Use PlayFlow to prepare an update for this Android project in its existing closed testing track.”
 
+The skill offers optional community contributions on first use. An offline preference helper remembers your choice. Opt-in allows local proposals; the agent shows the sanitized diff and asks before sending a draft PR. GitHub sign-in does not authorize sharing, and the maintainer controls merging. See [the community workflow](skills/playflow-publish/references/contributing.md).
+
 ## Common questions
 
 **Is this a skill or a command-line tool?** Both. The standard skill guides the AI agent; the Python CLI and scoped browser bridge execute and verify operations. The engine remains usable without the skill.

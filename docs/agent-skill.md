@@ -36,6 +36,14 @@ Give the agent a project and outcome:
 
 The agent should identify the exact package and selected app, inspect the current remote versions, prepare an unused version code, verify the signed bundle, reconcile relevant declarations, and prepare the requested release. Final review submission or publication follows the developer's actual authorization and configured approval requirements. It must verify remote state after consequential changes.
 
+## Optional community contributions
+
+On first use the agent offers to prepare useful, verified improvements for PlayFlow. You can decline and keep using all publishing functionality. Yes enables **local proposals**; the agent must still show you the sanitized exact change and ask before creating a fork, pushing, or opening a PR. GitHub sign-in alone is not permission to contribute.
+
+The offline `scripts/community.py` helper remembers `ask`, `off`, or `review` outside the installed skill. From the skill directory, use `python scripts/community.py status`, `set off` to decline, `set review` to opt into proposals, or `set ask` to reset your choice. Use the same Python environment as the other helpers. The file stores no app facts or credentials and is not uploaded.
+
+When approved, the agent sends only reviewed reusable code/instructions and synthetic fixtures to a draft PR against `CyberCipherSight/playflow`. Private app source, recordings, browser/session data, account IDs, and signing credentials stay local. The maintainer reviews the PR and decides whether it merges. Without GitHub access or permission, the proposal remains local. See [the contribution workflow](../skills/playflow-publish/references/contributing.md) for the exact process and limits. No background PR uploader or automatic learning service is installed.
+
 ## Compatibility and current limits
 
 | Area | Prototype status |

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.0a2 — 2026-10-26
+
+- Add a first-use community contribution offer with local ask/off/review preferences. The helper is offline and never authorizes GitHub writes.
+- Guide opted-in agents through independently verified, sanitized proposals, exact-diff approval, isolated forks/branches, and draft PRs for maintainer review. Authentication, app publishing permission, and opt-in alone do not authorize a submission.
+- Include the contribution helper and reference in manual installs, source distributions, and standalone skill ZIPs. MIT licensing is unchanged.
+
 ## 0.1.0a1 — 2026-10-25
 
 - Publish the first open-source prototype with standard Agent Skill files, Linux/Windows setup instructions, a portable skill-copy helper, and a clean source export with separate skill ZIP.

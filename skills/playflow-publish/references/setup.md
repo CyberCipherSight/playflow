@@ -2,6 +2,8 @@
 
 This skill requires the separate PlayFlow CLI from the matching trusted source release. Do not assume installing these instructions installs the CLI, Android tooling, or browser extension. The repository's `docs/getting-started.md` contains the full user-facing installation guide.
 
+On first use, check `scripts/community.py status` and follow the entrypoint's optional community offer. Remember the actual answer with `set review` or `set off`. This preference must never block setup or authorize GitHub writes. Read [contributing.md](contributing.md) only when preparing an approved type of contribution.
+
 1. Check local file/terminal access and whether execution is Linux or Windows. Windows is a product target with incomplete live verification; macOS is deferred.
 2. Locate or download the trusted PlayFlow release chosen by the developer. Install in its own virtual environment: Linux uses `python3 -m venv .venv`, then `.venv/bin/python -m pip install .`; Windows uses `py -m venv .venv`, then `.venv\Scripts\python.exe -m pip install .`. Do not require shell activation or change PowerShell execution policy.
 3. Run the skill's `scripts/doctor.py` with the same Python environment and the chosen Android source folder. Its result is a prerequisite inventory, not proof of SDK, signing, browser, or policy readiness.

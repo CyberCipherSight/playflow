@@ -2,6 +2,8 @@
 
 Contributions are welcome under the project's MIT license. Begin with a small issue or pull request describing a concrete problem and expected behavior. Discuss larger workflow or format changes before implementing them.
 
+The agent skill offers an optional [community contribution workflow](skills/playflow-publish/references/contributing.md). It prepares verified, sanitized changes locally and requires approval for the exact outbound proposal before any fork, push, or PR. GitHub connection and opting into local proposals do not authorize a submission. Community changes arrive as draft PRs for maintainer review; they are not automatically merged.
+
 ## Development setup
 
 Use Python 3.11+ and Node.js 22+:
