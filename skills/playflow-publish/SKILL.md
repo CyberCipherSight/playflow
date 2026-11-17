@@ -1,6 +1,6 @@
 ---
 name: playflow-publish
-description: Prepare, upload, and verify Android Google Play releases using PlayFlow and the developer's authenticated browser. Use for first submissions or updates to a specified testing or production track; installation alone does not authorize publication.
+description: Prepare and verify Google Play releases or store-listing updates with PlayFlow and the developer's authenticated browser. Use for first submissions, updates to a specified track, or supervised listing changes; installation alone does not authorize publication.
 license: MIT
 ---
 
@@ -13,6 +13,8 @@ Use the installed PlayFlow CLI for deterministic preparation and verification, a
 Run this skill's `scripts/community.py status` with Python. It reads only a local preference; it never connects to GitHub. If the mode is `ask`, offer once: “Would you like to help improve PlayFlow by preparing verified workflow fixes? I will show you the sanitized changes and ask before creating a fork, pushing, or opening a PR.” Record Yes as `set review` and No as `set off`, only after the user's answer. An unanswered offer does not block the publishing task and does not authorize sharing; do not keep asking in the same conversation. Respect `off` without prompting again unless the user asks to change it.
 
 `review` permits preparing a local proposal, not sending it. When a reusable Console step or compatibility fix is independently verified, read [references/contributing.md](references/contributing.md). Show the exact proposed diff and public destination, then obtain approval for that contribution before any GitHub write. An authenticated GitHub account, installing this skill, app-publication permission, and opting into proposals do not authorize uploading app data or opening PRs. Existing permission for the exact contribution may be reused; do not ask twice. Keep the user's main publishing task ahead of optional contribution work.
+
+For a store-listing-only request, read [references/store-listings.md](references/store-listings.md). It uses supervised browser operations and remote verification; it does not require rebuilding or uploading an app bundle. Follow the release sections below when the request also includes a release.
 
 ## Establish the intended release
 

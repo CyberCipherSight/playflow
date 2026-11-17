@@ -41,6 +41,7 @@ def main() -> None:
             "src/playflow/browser_extension/content.js",
             "skills/playflow-publish/SKILL.md",
             "skills/playflow-publish/references/releases.md",
+            "skills/playflow-publish/references/store-listings.md",
             "skills/playflow-publish/scripts/doctor.py",
             "skills/playflow-publish/scripts/community.py",
             "skills/playflow-publish/references/contributing.md",

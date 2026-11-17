@@ -41,6 +41,8 @@ The skill offers optional community contributions on first use. An offline prefe
 
 **Can I update an app already in production?** Yes, through an explicitly selected production draft and reviewed final action. Preserve its registered upload key and use a new unused version code. Google review and managed publishing are distinct stages.
 
+**Can I update a store listing without a new release?** Yes. The skill includes a [supervised listing guide](skills/playflow-publish/references/store-listings.md) for comparing and verifying text and assets. The agent still performs Console steps through scoped browser controls; this is not a single-command listing workflow.
+
 ## Get started
 
 Requires Python 3.11+. Builds require your Android project's Gradle wrapper, a compatible JDK, and Android SDK. ADB is needed only for device installation. Linux is the primary development platform; other platforms have not been verified end to end.

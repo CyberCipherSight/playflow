@@ -14,6 +14,7 @@ SKILL_FILES = (
     "scripts/community.py",
     "references/setup.md",
     "references/releases.md",
+    "references/store-listings.md",
     "references/platforms.md",
     "references/contributing.md",
 )
